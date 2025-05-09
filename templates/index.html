@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shops Tia Rosa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Overlay for background image */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('static/images/fundo.png'); /* Caminho para a imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.85;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
+        
+        header {
+            background-color: rgba(255, 72, 157, 0.9);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+        }
+        
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            min-height: calc(100vh - 80px);
+        }
+        
+        .content-box {
+            border-radius: 25px;
+            padding: 50px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: justify;
+            display: inline-block;
+        }
+        
+        p {
+            color: #ffffff;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        
+        button {
+            background-color: #ff489d;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 72, 157, 0.3);
+        }
+        
+        button:hover {
+            background-color: #e93383;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 72, 157, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .content-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Coffee Shops Tia Rosa</h1>
+    </header>
+    <main>
+        <div class="content-box">
+            <h2>Explore nossas funcionalidades</h2>
+            <p>Gerencie produtos, pedidos e clientes de forma simples e eficiente.<br>
+Nossa plataforma foi desenvolvida pensando nas necessidades!</p>
+            <button onclick="window.location.href='/sistema'">Acessar Sistema</button>
+            <button onclick="window.location.href='/cardapio'">Cardápio</button> 
+        </div>
+    </main>
+</body>
+</html>

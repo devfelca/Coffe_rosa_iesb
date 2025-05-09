@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Gerenciar Pedidos{% endblock %}
+{% block header_right %}
+    <a href="/sistema" class="header-sistema-btn">Voltar</a>
+{% endblock %}
+{% block content %}
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 60px;">
+        <h2 style="display:inline-block; margin-bottom:18px; font-size: 1.9rem; color: #ffffff;">Gerenciar Pedidos</h2>
+        <div class="info" style="color:#ffffff; font-size:1.3rem; margin: 0 auto 24px auto; max-width: 600px; text-align:center;">
+            Aqui você poderá cadastrar, editar e remover pedidos do sistema.<br>
+            (Funcionalidades a serem implementadas)
+        </div>
+    </div>
+    <div style="max-width: 700px; margin: 32px auto 0 auto;">
+        <h3 style="color:#ffffff; margin-bottom: 12px; text-align:center;">Pedidos cadastrados</h3>
+        <ul style="list-style: none; padding: 0;">
+            {% for pedido in pedidos %}
+            <li style="display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.85); border-radius: 8px; margin-bottom: 12px; padding: 14px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <span>#{{ pedido.id }} - {{ pedido.cliente }} - {{ pedido.produto }}</span>
+                <span>
+                    <form action="/pedidos/editar/{{pedido.id}}" method="post" style="display:inline;">
+                        <input type="text" name="cliente" value="{{pedido.cliente}}" style="width:120px; display:none;" />
+                        <input type="text" name="produto" value="{{pedido.produto}}" style="width:120px; display:none;" />
+                        <button type="button" onclick="this.previousElementSibling.style.display='inline'; this.previousElementSibling.previousElementSibling.style.display='inline'; this.style.display='none'; this.nextElementSibling.style.display='inline';" style="color: #ff489d; margin-right: 10px; font-weight: bold; background:none; border:none; cursor:pointer;">Editar</button>
+                        <button type="submit" style="color: #009e4f; margin-right: 10px; font-weight: bold; background:none; border:none; display:none; cursor:pointer;">Salvar</button>
+                    </form>
+                    <form action="/pedidos/excluir/{{pedido.id}}" method="post" style="display:inline;">
+                        <button type="submit" style="color: #e93333; font-weight: bold; background:none; border:none; cursor:pointer;">Excluir</button>
+                    </form>
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+        <div style="text-align:center; margin-top: 18px;">
+            <form action="/pedidos/adicionar" method="post" style="display:inline-block;">
+                <input type="text" name="cliente" placeholder="Cliente" required style="padding: 8px 16px; border-radius: 20px; border: 1px solid #ccc; font-size: 1rem; margin-right: 8px;" />
+                <input type="text" name="produto" placeholder="Produto" required style="padding: 8px 16px; border-radius: 20px; border: 1px solid #ccc; font-size: 1rem; margin-right: 8px;" />
+                <button type="submit" style="background: #009e4f; color: #fff; border: none; border-radius: 30px; padding: 10px 32px; font-weight: bold; font-size: 1.1rem; text-decoration: none; transition: background 0.2s;">Adicionar Pedido</button>
+            </form>
+        </div>
+    </div>
+{% endblock %} 
