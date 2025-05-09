@@ -37,8 +37,7 @@ Sistema de gerenciamento simples feito com Flask para realizar CRUD em memo com 
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/coffee-shops-tia-rosa.git
-cd coffee-shops-tia-rosa
+git clone https://github.com/devfelca/Coffe_rosa_iesb.git
 ```
 
 2. Crie um ambiente virtual (opcional, mas recomendado):
